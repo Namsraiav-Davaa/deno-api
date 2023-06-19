@@ -1,6 +1,2 @@
-addEventListener("fetch", (event) => {
-    const response = new Response ("Hello world GG", {
-        headers: {'content-type': 'text/plain'},
-    });
-    event.respondWith(response);
-});
+import { serve } from "https://deno.land/std/http/mod.ts";
+serve((_) => Response.json({ text: "Hello world from Deno!" }));
